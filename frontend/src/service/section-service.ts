@@ -25,7 +25,7 @@ class SectionService {
             built[key] = await dynamicComponentService.getDynamicComponentById(section.components[key]);
         }
         let res = { ...section, "components": built };
-        console.log(res)
+        // console.log(res)
         return res as Section;
     }
 
@@ -49,7 +49,7 @@ class SectionService {
         const receivedSections = await resp.json();
         let sections: Section[] = [];
         for (const recvSec in receivedSections) {
-            console.log(recvSec);
+            // console.log(recvSec);
             sections = [...sections, await this.adaptIncoming(receivedSections[recvSec])];
         }
         return sections;

@@ -30,9 +30,9 @@ export enum ManagerRoutes {
   All = 'list-sections',
   AddSection = 'add-section',
   EditSection = 'edit-section',
-  AddComponent = 'edit-component',
+  AddComponent = 'add-component',
   EditComponent = 'edit-component',
-  AddContent = 'edit-content',
+  AddContent = 'add-content',
   EditContent = 'edit-content',
 }
 

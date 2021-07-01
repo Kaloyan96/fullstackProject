@@ -82,10 +82,11 @@ var inFrameIDCounter = 0;
 
 export default function SectionsNavEditor({ sections, navComponent, onSave, ...rest }: Props): ReactElement<Props> {
     const [lists, setLists] = useState<any>({})
+    console.log(navComponent);
+    // console.log(navComponent)
 
     const fromSections = () => {
         return sections.map(s => {
-            // console.log(inFrameIDCounter);
             return new NavItemData(`${new Date().getTime()}-${inFrameIDCounter++}`, s);
         });
     }
@@ -93,7 +94,8 @@ export default function SectionsNavEditor({ sections, navComponent, onSave, ...r
     const fromNavComponent = () => {
         let res = {}
         if (navComponent) {
-            let navData = JSON.parse(navComponent.data);
+            console.log(navComponent.data)
+            let navData = navComponent.data;
             console.log(navData);
             let rootElements = navData.map((section: any) => {//change section: section
                 let currentNavItem: any = navItemFromSectionID(section.sectionId);
